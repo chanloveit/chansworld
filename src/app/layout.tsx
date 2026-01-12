@@ -10,7 +10,10 @@ export const metadata = {
 	openGraph: {
 		title: "chansworld",
 		description: "Hello, World!",
-		
+	},
+
+	verification: {
+		google: "oqZPgdu6nMgI0e9z8qvbM2gdq9ZM9owap03ZwIfy"
 	}
 };
 
