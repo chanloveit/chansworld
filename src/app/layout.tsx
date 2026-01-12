@@ -13,7 +13,7 @@ export const metadata = {
 	},
 
 	verification: {
-		google: "oqZPgdu6nMgI0e9z8qvbM2gdq9ZM9owap03ZwIfy"
+		google: "oqZPgdu6nMgI0e9z8qvbM2gdq9ZM9owap03ZwIfysTk"
 	}
 };
 
