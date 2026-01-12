@@ -2,6 +2,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getPostDetail } from '@/components/getmodels';
 import YoutubeEmbed from '@/components/youtubeembed';
+import Comments from '@/components/comments';
 
 export default async function PostPage({ params }: { params: Promise<{ id: string }> }){
 	const { id } = await params;
@@ -67,6 +68,7 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
 		          {post.content}
 		        </ReactMarkdown>
 		    </article>
+			<Comments></Comments>
 			<hr className = 'mt-4'></hr>
 		</main>
 	)
