@@ -1,7 +1,10 @@
 'use client';
 import Giscus from '@giscus/react';
+import { useTheme } from 'next-themes';
 
 export default function Comments(){
+	const { theme } = useTheme();
+	
 	return (
 		<section className = 'mt-10 border-t border-black/50 dark:border-white/50 pt-10'>
 			<Giscus 
@@ -14,7 +17,7 @@ export default function Comments(){
 				reactionsEnabled = '1'
 				emitMetadata = "0"
 				inputPosition = "bottom"
-				theme = "preferred_color_scheme"
+				theme = {theme === 'dark' ? 'transparent_dark' : 'light'}
 				lang = "ko" />
 		</section>
 	);
