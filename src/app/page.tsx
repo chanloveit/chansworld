@@ -1,4 +1,4 @@
-import { Post, Category } from '@types/blog';
+import { Post, Category } from '@/types/blog';
 import { getPosts, getCategories } from '@/components/getmodels';
 import CategoriesBar from '@/components/categoriesbar';
 import PostCard from '@/components/postcard';
