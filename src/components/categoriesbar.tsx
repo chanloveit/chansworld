@@ -1,4 +1,4 @@
-import { Category } from '@types/blog';
+import { Category } from '@/types/blog';
 import Link from 'next/link';
 
 
