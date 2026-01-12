@@ -1,7 +1,7 @@
 import { getPostsByCategory } from '@/components/getmodels';
 import PostCard from '@/components/postcard';
 import { Post } from '@/types/blog';
-import AnimationWrapper from '@/components/animationwrapper.tsx'
+import AnimationWrapper from '@/components/animationwrapper'
 import Link from 'next/link';
 
 export default async function CategoryPage({ params }: { params: { slug: string } }){

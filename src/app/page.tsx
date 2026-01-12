@@ -2,7 +2,7 @@ import { Post, Category } from '@types/blog';
 import { getPosts, getCategories } from '@/components/getmodels';
 import CategoriesBar from '@/components/categoriesbar';
 import PostCard from '@/components/postcard';
-import AnimationWrapper from '@/components/animationwrapper.tsx'
+import AnimationWrapper from '@/components/animationwrapper'
 import Link from 'next/link';
 
 export default async function Home() {

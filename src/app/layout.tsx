@@ -1,7 +1,7 @@
 import "./globals.css";
-import Navbar from '@/components/navbar.tsx'
-import Footer from '@/components/footer.tsx'
-import Providers from './providers.tsx'
+import Navbar from '@/components/navbar'
+import Footer from '@/components/footer'
+import Providers from './providers'
 import { Playfair_Display, Nanum_Myeongjo } from 'next/font/google';
 
 export const metadata = {

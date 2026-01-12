@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { Post, Category } from '@/types/blog';
 
-const postsDirectory = path.join(process.cwd(), 'posts');
+const postsDirectory = path.join(process.cwd(), 'posts/post');
 
 export async function getPosts(): Promise<Post[]>{
 	const fileNames = fs.readdirSync(postsDirectory);
