@@ -2,18 +2,19 @@ import { Post } from '@/types/blog';
 import Link from 'next/link';
 
 export default function PostCard({ post }: { post: Post }) {
-	let imgUrl = post.auto_head_image;
+	let imgUrl = post.auto_head_image || '';
 
 	return (
 	    <>	
 			<div className='relative overflow-hidden bw-card w-full max-w-sm aspect-square border-black dark:border-white border-1 mx-auto'>
 	        <Link href={`/post/${post.id}`} className='group block w-full h-full'>
 			    <div className='absolute inset-0 z-0'>
-		        <img 
+				{imgUrl && <img 
 			        src={imgUrl} 
 		            alt={post.title}
 	                className='w-full h-full object-cover' 
 	            />
+				}
 				<div className = 'absolute inset-0 bg-white/80 dark:bg-dark-bg/80'></div>
 		        </div>
 				
