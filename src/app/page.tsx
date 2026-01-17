@@ -26,7 +26,7 @@ export default async function Home() {
 					<h2 className='text-3xl'>Every Post.</h2>
 					<section className = 'grid grid-cols-1 md:grid-cols-2 gap-8 justify-center'>
 						{posts.map(post => (
-							<PostCard key = {post.id} post = {post} className = ''/>
+							<PostCard key = {post.id} post = {post}/>
 						))}
 					</section>
 				</section>
