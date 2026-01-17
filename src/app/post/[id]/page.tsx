@@ -57,7 +57,7 @@ export default async function PostPage({ params }){
 						},
 
 						img: ({...props }) => (
-							<img {...props} className = 'my-10 mx-auto' />
+							<img {...props} className = 'my-10 mx-auto max-w-2xl h-auto' />
 						),
 
 						
