@@ -72,11 +72,3 @@
 .category-swiper .swipe-wrapper{
 	transition-timing-function: linear !important;
 }
-
-.bw-card {
-	transition: transform 0.3s ease;
-}
-
-.bw-card:hover {
-	transform: translateY(-5px)
-}

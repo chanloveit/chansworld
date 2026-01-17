@@ -17,6 +17,7 @@ export const metadata = {
 	}
 };
 
+/*
 const playfair = Playfair_Display({ 
   subsets: ['latin'], 
   variable: '--font-playfair' 
@@ -28,10 +29,11 @@ const nanum = Nanum_Myeongjo({
   variable: '--font-nanum',
   preload: false 
 });
+*/
 
 export default function RootLayout({ children, }: { children: React.ReactNode; }) {
   return (
-    <html lang = "ko" className = {`${playfair.variable} ${nanum.variable}`} suppressHydrationWarning> 
+    <html lang = "ko" suppressHydrationWarning> 
 		<head>
 			<meta name = 'format-detection' content = 'telephone=no, email=no, address=no, address=no'></meta>
 		</head>
