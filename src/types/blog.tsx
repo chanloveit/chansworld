@@ -12,4 +12,5 @@ export interface Post {
 	auto_head_image: string | null;
 	created_at: string;
 	category: Category | null;
+	featured?: boolean;
 }

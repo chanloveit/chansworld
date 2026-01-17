@@ -27,7 +27,8 @@ export async function getPosts(): Promise<Post[]>{
                     name: String(data.category || "미분류"),
                     slug: String(data.category || "default"),
                     post_count: 0 
-                }
+                },
+				featured: data.featured
             } as Post;
         });
 	return allPostsData.sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
@@ -79,6 +80,7 @@ export async function getPostDetail(id: string): Promise<Post> {
             name: data.category,
             slug: data.category,
             post_count: 0
-        }
+        },
+		featured: data.featured
     } as Post;
 }

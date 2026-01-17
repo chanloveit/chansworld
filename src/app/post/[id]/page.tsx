@@ -6,6 +6,8 @@ import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { getPostDetail } from '@/components/getmodels';
 import AnimationWrapper from '@/components/animationwrapper';
 import YoutubeEmbed from '@/components/youtubeembed'
+import Comments from '@/components/comments'
+
 export default async function PostPage({ params }){
 	const { id } = await params;
 	const post = await getPostDetail(id);
@@ -57,7 +59,7 @@ export default async function PostPage({ params }){
 						},
 
 						img: ({...props }) => (
-							<img {...props} className = 'my-10 mx-auto max-w-2xl h-auto' />
+							<img {...props} className = 'my-10 mx-auto w-full max-w-2xl h-auto' />
 						),
 
 						
@@ -67,6 +69,8 @@ export default async function PostPage({ params }){
 				</ReactMarkdown>
 				</div>
 			</AnimationWrapper>
+
+			<Comments></Comments>
 		</main>
 	);
 }

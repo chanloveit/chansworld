@@ -3,12 +3,12 @@ import { getPosts, getCategories } from '@/components/getmodels';
 import CategoriesBar from '@/components/categoriesbar';
 import PostCard from '@/components/postcard';
 import AnimationWrapper from '@/components/animationwrapper'
+import CardSwiper from '@/components/cardswiper'
 import Link from 'next/link';
 
 export default async function Home() {
 	const posts = await getPosts();
 	const categories = await getCategories();
-	const featuredPost = posts[posts.length - 1]
 	
 	return (
 		<main className = 'bg-white dark:bg-dark-bg text-black dark:text-white'>
@@ -17,7 +17,7 @@ export default async function Home() {
 				<hr className = 'mb-4 border-1'></hr>
 				<section className = 'flex flex-col gap-6'>
 					<h2 className='text-3xl'>Featured Post.</h2>
-					<PostCard key = {1} post = {featuredPost} />
+					<CardSwiper posts = {posts} />
 				</section>
 
 
