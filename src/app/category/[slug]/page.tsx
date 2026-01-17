@@ -16,7 +16,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
 					<p className = 'text-sm'>{posts.length} posts</p>
 				</h1>
 	
-				<hr className = 'mb-4'></hr>
+				<hr className = 'mb-4 border-1'></hr>
 				<section className = 'grid grid-cols-1 md:grid-cols-2 gap-4 justify-center'>
 					{posts.map((post) => (
 						<PostCard key = {post.id} post = {post}></PostCard>

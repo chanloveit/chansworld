@@ -5,7 +5,7 @@ import Providers from './providers'
 import { Playfair_Display, Nanum_Myeongjo } from 'next/font/google';
 
 export const metadata = {
-	title: "chansworld",
+	title: "chansworld: 이찬희 블로그",
 	description: "Hello, World!",
 	openGraph: {
 		title: "chansworld",

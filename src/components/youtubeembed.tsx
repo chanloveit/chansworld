@@ -9,7 +9,7 @@ interface YoutubeProps{
 
 export default function YoutubeEmbed({ videoId, title = 'YouTube Video' }: YoutubeProps){
 	return(
-		<div className = 'my-6 w-full mx-auto overflow-hidden border border-black/50 dark:border-white/50'>
+		<div className = 'my-6 w-full mx-auto overflow-hidden'>
 			<LiteYouTubeEmbed id = {videoId} title = {title} poster = 'maxresdefault' noCookie = {true}>
 			</LiteYouTubeEmbed>
 		</div>

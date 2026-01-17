@@ -1,75 +1,72 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from "rehype-raw";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { getPostDetail } from '@/components/getmodels';
-import YoutubeEmbed from '@/components/youtubeembed';
-import Comments from '@/components/comments';
-
-export default async function PostPage({ params }: { params: Promise<{ id: string }> }){
+import AnimationWrapper from '@/components/animationwrapper';
+import YoutubeEmbed from '@/components/youtubeembed'
+export default async function PostPage({ params }){
 	const { id } = await params;
 	const post = await getPostDetail(id);
-
-	const getYouTubeId = (urlStr: string) => {
-        try{
-            const url = new URL(urlStr.trim());
-            if (url.hostname.includes("youtube.com")) return url.searchParams.get("v");
-            if (url.hostname.includes("youtu.be")) return url.pathname.substring(1);
-            return null;
-        } 
-		catch{
-            return null;
-        }
-    };
 	
 	return(
-		<main className = 'bg-white dark:bg-dark-bg text-black dark:text-white'>
-			<div className = 'mb-12'>
-				<h1 className = 'mt-10 text-3xl'>{post.title}</h1>
-				<time className = 'text-gray-400 text-3sm'>
-					{new Date(post.created_at).toLocaleDateString('ko-KR')}
-				</time>
-				<hr className = 'mt-4'></hr>
-			</div>
+		<main className = 'min-h-screen bg-white dark:bg-dark-bg text-black dark:text-white'>
+			<AnimationWrapper>
+				<header className="mt-12 mb-12 border-b-2 border-black dark:border-white pb-4">
+					<h1 className = 'text-4xl mb-4 break-keep'>
+						{post.title}
+					</h1>
+					<span className = 'text-base dark:border-white py-3'>
+						#{post.category.name}
+					</span>
+					<time className = 'text-base opacity-60 px-3'>
+						{new Date(post.created_at).toLocaleDateString('ko-KR')}
+					</time>
+				</header>
 
-			<article className="prose prose-neutral max-w-none text-lg">
-		        <ReactMarkdown 
-		          remarkPlugins={[remarkGfm]}
-		          components={{
-		            img: ({ src }) => (
-			            <img 
-			                src={src} 
-			                className="mx-auto my-6 block max-w-full h-auto border border-black/50 dark:border-white/50" 
-			            />
-		            ),
-					p: ({ children }) => {
-						return(
-							<div className = 'my-6 leading-relaxed'>
-								{children}
-							</div>
-						);
+				<div className = 'prose dark:prose-invert max-w-none'>
+				<ReactMarkdown
+					rehypePlugins = {[rehypeRaw]}
+					remarkPlugins = {[remarkGfm]}
+					components = {{
+						p({ children }){
+							if(typeof children == 'string' && children.startsWith('youtube:')){
+								const videoId = children.replace('youtube:', '').trim();
+								return <YoutubeEmbed videoId = {videoId} title = "Embedded Video" />;
+							}	
+
+							return <p className="mb-4 leading-loose">{children}</p>;
 						},
-					a: ({ href, children }) => {
-						const url = href || '';
-						const videoId = getYouTubeId(url);
+						
+						code({ node, inline, className, children, ...props }: any) {
+							const match = /language-(\w+)/.exec(className || '');
+							return !inline && match ? (
+								<SyntaxHighlighter
+									style = {oneDark}
+									language = {match[1]}
+									PreTag = 'div'
+									className = 'rounded-none border border-gray-800 my-6'
+									{...props}
+								>{String(children).replace(/\n$/, '')}</SyntaxHighlighter>
+							):(
+								<code className = 'bg-gray-100 dark:bg-gray-700 px-1.5 py-0.5 text-sm font-mono' {...props}>
+									{children}
+								</code>
+							)			
+						},
 
-						if(videoId){
-							return <YoutubeEmbed videoId={videoId} title={post.title} />;
-						}
+						img: ({...props }) => (
+							<img {...props} className = 'my-10 mx-auto' />
+						),
 
-						else{
-							return(
-							<a href={url} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
-				                {children}
-				            </a>
-							);
-						}
-					}
-			    }}
-		    >
-		          {post.content}
-		        </ReactMarkdown>
-		    </article>
-			<Comments></Comments>
-			<hr className = 'mt-4'></hr>
+						
+					}}
+				>
+					{post.content}
+				</ReactMarkdown>
+				</div>
+			</AnimationWrapper>
 		</main>
-	)
+	);
 }
