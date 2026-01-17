@@ -1,5 +1,5 @@
 'use client';
-import Post from '@/types/blog'
+import { Post }from '@/types/blog'
 import PostCard from '@/components/postcard'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
