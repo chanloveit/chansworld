@@ -3,7 +3,7 @@ import ThemeToggle from './themetoggle'
 
 export default function Navbar(){
 	return(
-		<nav className = 'sticky top-0 flex items-center w-full h-[70px] px-5 border-b border-black dark:border-white shadow-lg shadow-black-500/50 dark:shadow-white/10 z-100 bg-white dark:bg-dark-bg text-black dark:text-white'>
+		<nav className = 'sticky top-0 flex items-center w-full h-[70px] px-5 border-b border-black dark:shadow-base dark:border-white shadow-lg shadow-black-500/50 dark:shadow-white/10 z-100 bg-white dark:bg-dark-bg text-black dark:text-white'>
 			<div className = 'absolute inset-0 -z-10 bg-cover bg-top transition-opacity duration-1000'
 				style = {{ backgroundImage: "url('/image/img.jpg')", opacity: 0.2}}>
 			</div>
