@@ -16,32 +16,6 @@ export default function PostCard({ post }: { post: Post }) {
 				    group-hover:scale-x-100
 				  " />
 
-				  <span className="
-				    absolute bottom-0 left-0 h-0.5 w-full
-				    bg-black
-					dark:bg-white
-				    scale-x-0 origin-right
-				    transition-transform duration-300
-				    group-hover:scale-x-100
-				  " />	
-
-				<span className="
-				    absolute top-0 left-0 w-0.5 h-full
-				    bg-black
-					dark:bg-white
-				    scale-y-0 origin-bottom
-				    transition-transform duration-300
-				    group-hover:scale-y-100
-				  " />
-
-				  <span className="
-				    absolute top-0 right-0 w-0.5 h-full
-				    bg-black
-					dark:bg-white
-				    scale-y-0 origin-top
-				    transition-transform duration-300
-				    group-hover:scale-y-100
-				  " />
 				<div className = 'aspect-square overflow-hidden'>
 					{imgUrl && (
 						<img src = {imgUrl} className = 'w-full h-full object-cover rounded-xl'></img>
