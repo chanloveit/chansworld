@@ -1,7 +1,8 @@
 import "./globals.css";
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
-import Providers from './providers'
+import Navbar from '@/components/navbar';
+import Footer from '@/components/footer';
+import Providers from './providers';
+import { Metadata } from 'next';
 import { Playfair_Display, Nanum_Myeongjo } from 'next/font/google';
 
 export const metadata = {
@@ -12,6 +13,10 @@ export const metadata = {
 		description: "Hello, World!",
 	},
 
+	icons: {
+		icon: '/favicon.ico',
+	}
+	
 	verification: {
 		google: "oqZPgdu6nMgI0e9z8qvbM2gdq9ZM9owap03ZwIfysTk"
 	}
