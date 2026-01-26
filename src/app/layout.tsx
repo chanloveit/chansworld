@@ -6,11 +6,15 @@ import { Metadata } from 'next';
 import { Playfair_Display, Nanum_Myeongjo } from 'next/font/google';
 
 export const metadata = {
-	title: "chansworld: 이찬희 블로그",
-	description: "Hello, World!",
+	title: {
+		default: 'chansworld: 이찬희 블로그',
+		template: '%s | chansworld',
+	},
+
+	description: 'chansworld: 이찬희 블로그',
+
 	openGraph: {
-		title: "chansworld",
-		description: "Hello, World!",
+		siteName: 'chansworld: 이찬희 블로그'
 	},
 
 	icons: {
