@@ -13,7 +13,7 @@ export default function ThemeToggle(){
 	return(
 		<button
 			onClick = {() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-			className = 'hover:underline transition-colors'>
+			className = 'transition-colors cursor-pointer'>
 			{theme === 'dark' ? (
 				<Sun className = 'w-6 h-6 text-white' />
 				) : (

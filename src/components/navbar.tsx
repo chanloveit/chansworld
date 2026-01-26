@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import ThemeToggle from './themetoggle'
+import ThemeToggle from './themetoggle';
+import GithubLink from './githublink';
 
 export default function Navbar(){
 	return(
@@ -16,9 +17,9 @@ export default function Navbar(){
 			
 			<div className = 'flex items-center gap-4 md:gap-8'>
 				<ThemeToggle></ThemeToggle>
+				<GithubLink></GithubLink>
 				<Link href = '/about' className = 'text-sm md:text-base font-bolder hover:underline'>About</Link>
 				<Link href = '/guestbook' className = 'text-sm md:text-base font-bolder hover:underline'>GuestBook</Link>
-				<Link href = 'https://github.com/chanloveit/' target = '_blank' className = 'text-sm md:text-base font-bolder hover:underline'>Github</Link>
 			</div>
 		</nav>
 	)
