@@ -43,7 +43,7 @@ function FeaturedSlide({ post }: { post: Post }){
 				<div className="relative z-10 h-full p-3">
 					<div className = 'relative h-full rounded-2xl overflow-hidden'>
 					{post.auto_head_image && (
-						<img src = {post.auto_head_image}
+						<img src = {post.auto_head_image} alt = {post.title}
 							className = 'absolute inset-0 w-full h-full object-cover'>
 						</img>
 					)}
