@@ -7,6 +7,25 @@ import { getPostDetail } from '@/components/getmodels';
 import AnimationWrapper from '@/components/animationwrapper';
 import YoutubeEmbed from '@/components/youtubeembed'
 import Comments from '@/components/comments'
+import { Metadata } from 'next';
+
+export async function generateMetadata({ params }) : Promise<Metadata> {
+	const { id } = await params;
+	const post = await getPostDetail(id);
+
+	const description = post.content.replace(/[#*`\[\]]/g, '').slice(0, 150).trim();
+
+	return {
+		title: `${post.title}`,
+		description: description,
+		openGraph: {
+			title: post.title,
+			description: description,
+			images: post.auto_head_image,
+			publishedTime: post.created_at,
+		},
+	};
+}
 
 export default async function PostPage({ params }){
 	const { id } = await params;
