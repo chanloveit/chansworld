@@ -18,7 +18,7 @@ export default function PostCard({ post }: { post: Post }) {
 
 				<div className = 'aspect-square overflow-hidden'>
 					{imgUrl && (
-						<img src = {imgUrl} className = 'w-full h-full object-cover rounded-xl'></img>
+						<img src = {imgUrl} alt = {post.title} className = 'w-full h-full object-cover rounded-xl'></img>
 					)}
 				</div>
 
