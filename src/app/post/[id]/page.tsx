@@ -8,6 +8,7 @@ import AnimationWrapper from '@/components/animationwrapper';
 import YoutubeEmbed from '@/components/youtubeembed'
 import Comments from '@/components/comments'
 import { Metadata } from 'next';
+import Image from 'next/image';
 
 export async function generateMetadata({ params }) : Promise<Metadata> {
 	const { id } = await params;
@@ -78,9 +79,8 @@ export default async function PostPage({ params }){
 						},
 
 						img: ({...props }) => (
-							<img {...props} className = 'my-10 mx-auto w-full max-w-2xl h-auto' />
+							<img {...props} className = 'my-10 mx-auto w-auto max-w-xl h-auto' />
 						),
-
 						
 					}}
 				>
