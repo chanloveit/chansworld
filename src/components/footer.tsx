@@ -1,6 +1,6 @@
 export default function Footer(){
 	return(
-		<footer className='h-[70px] border-t border-black dark:border-white mt-12 relative w-full shadow-[0_-5px_5px_-5px_rgba(0,0,0,0.5)] dark:shadow-[0_-5px_5px_-5px_rgba(255,255,255,1)] z-[100] overflow-hidden bg-white dark:bg-dark-bg'>
+		<footer className='h-[70px] border-t border-black dark:border-white mt-12 relative w-full z-[100] overflow-hidden bg-white dark:bg-dark-bg'>
 		    <div 
 		        className='absolute inset-0 -z-10 bg-cover bg-bottom'
 		        style={{ 
