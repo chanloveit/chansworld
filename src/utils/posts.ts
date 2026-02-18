@@ -35,6 +35,6 @@ export function getPostById(id: number): Post | null{
 	return posts.find((p) => p.id === id) ?? null;
 }
 
-export function geetFeaturedPosts(): Post[]{
+export function getFeaturedPosts(): Post[]{
 	return getAllPosts().filter((p) => p.featured);
 }
