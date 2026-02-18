@@ -3,7 +3,7 @@ import type { Post } from '@/utils/types';
 import Link from 'next/link'
 
 export default async function Home() {
-	const featured = getFeaturedPosts();
+	const featured = getFeaturedPosts().slice(0, 5);
 	const latest = getAllPosts().slice(0, 10);
 
 	return(
@@ -17,13 +17,5 @@ export default async function Home() {
 				</section>
 			)}
 		</div>
-	);
-}
-
-function FeaturedRow({ post }: { post: Post }){
-	return(
-		<Link href = {`/post/${post.id}`}>
-			<div className = 'border border-b border-border-1'></div>
-		</Link>	
 	);
 }
