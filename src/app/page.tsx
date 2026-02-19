@@ -2,11 +2,12 @@ import { getAllPosts, getFeaturedPosts } from '@/utils/posts';
 import type { Post } from '@/utils/types';
 import Link from 'next/link'
 import CategoryTag from '@/components/CategoryTag';
-import PostRow from '@/components/PostRow'
+import PostList from '@/components/PostList'
 
 export default async function Home() {
+	const posts = getAllPosts();
 	const featured = getFeaturedPosts().slice(0, 5);
-	const latest = getAllPosts().slice(0, 10);
+	const latest = posts.slice(0, 20);
 
 	return(
 		<div className = 'max-w-4xl mx-auto px-10 pt-18 pb-24'>
@@ -19,16 +20,7 @@ export default async function Home() {
 				</section>
 			)}
 
-			<section>
-				<div className = 'flex items-baseline justify-between mb-6'>
-					<p className = 'text-text-3 text-[12px] tracking-widest  mb-5'>// latest - {latest.length} entries</p>
-					<Link href = '/posts' className = 'text-[12px] text-text-3 tracking-widest hover:text-accent transition-colors duration-200'>all posts →</Link>
-				</div>
-
-				{latest.map((post, index) => (
-					<PostRow key = {post.id} post = {post} index = {index} />
-				))}
-			</section>
+			<PostList posts = {latest} />
 		</div>
 	);
 }
