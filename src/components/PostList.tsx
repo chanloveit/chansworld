@@ -21,10 +21,6 @@ export default function PostList({ posts, categories }: Props){
 				<p className = 'text-text-3 text-[12px] tracking-widest'>
 					//latest - {filtered.length} entries
 				</p>
-
-				<Link href = '/posts' className = 'text-[12px] text-text-3 tracking-widest hover:text-accent transition-colors duration-200'>
-					all posts →
-				</Link>
 			</div>
 
 			<div className="flex gap-2 flex-wrap mb-6">

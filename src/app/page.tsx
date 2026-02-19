@@ -7,7 +7,7 @@ import PostList from '@/components/PostList';
 export default async function Home() {
 	const posts = getAllPosts();
 	const featured = getFeaturedPosts().slice(0, 5);
-	const latest = posts.slice(0, 20);
+	const latest = posts
 
 	return(
 		<div className = 'max-w-4xl mx-auto px-10 pt-18 pb-24'>
