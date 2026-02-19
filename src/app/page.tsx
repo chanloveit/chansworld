@@ -15,7 +15,7 @@ export default async function Home() {
 				<section className = 'mb-18'>
 					<p className = 'text-text-3 text-[12px] tracking-widest  mb-5'>// featured</p>
 					{featured.map((post) => (
-						<FeaturedRow key = {post.id} post = {post}>{post.title}</FeaturedRow>
+						<FeaturedRow key = {post.id} post = {post} />
 					))}
 				</section>
 			)}
