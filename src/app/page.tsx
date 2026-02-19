@@ -6,7 +6,7 @@ import PostList from '@/components/PostList';
 
 export default async function Home() {
 	const posts = getAllPosts();
-	const featured = getFeaturedPosts().slice(0, 5);
+	const featured = getFeaturedPosts();
 	const latest = posts
 
 	return(
@@ -26,7 +26,7 @@ export default async function Home() {
 }
 
 function FeaturedRow({ post }: {post: Post}){
-	const CATEGORIES = getAllCategories();
+	const CATEGORIES = ['ALL', ...getAllCategories()];
 	
 	return(
 		<Link href = {`/post/${post.id}`}>
