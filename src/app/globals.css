@@ -72,7 +72,7 @@
   .prose a:hover { border-bottom-color: var(--color-accent); }
   .prose strong { color: var(--color-text-1); font-weight: 600; }
   .prose hr { border: none; border-top: 1px solid var(--color-border-1); margin: 2.4em 0; }
-  .prose img { max-width: 100%; border: 1px solid var(--color-border-1); display: block; margin: 1.8em 0; }
+  .prose img { max-width: 100%; border: 1px solid var(--color-border-1); display: block; margin: 1.8em auto; }
   .prose ul,
   .prose ol { padding-left: 1.5em; margin-bottom: 1.5em; }
   .prose li { margin-bottom: .35em; }
