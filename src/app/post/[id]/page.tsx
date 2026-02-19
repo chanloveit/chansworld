@@ -5,21 +5,21 @@ import Link from 'next/link';
 import CategoryTag from '@/components/CategoryTag';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
 
-export async function generateMetadata({ params }: Promise<{ id: string }>){
+export async function generateMetadata({ params }: { params : Promise<{ id: string }>}): Promise<Metadata>{
 	const { id } = await params;
 	const post = getPostById(Number(id));
 	if(!post){
 		return{
 			title: 'Not Found'
 		};
-
-		return{
-			title: post.title
-		};
 	}
+
+	return{
+			title: post.title
+	};
 }
 
-export default async function PostPage({ params }: Promise<{ id: string }>){
+export default async function PostPage({ params }: { params : Promise<{ id: string }>}){
 	const { id } = await params;
 	const post = getPostById(Number(id));
 
@@ -28,7 +28,7 @@ export default async function PostPage({ params }: Promise<{ id: string }>){
 	}
 	
 	return(
-		<div className = 'max-w-3xl mx-auto px-10 pt-16 pb-24'>
+		<div className = 'max-w-5xl mx-auto px-10 pt-16 pb-24'>
 			<header className = 'mb-14'>
 				<div className = 'flex items-center gap-3 mb-5'>
 					<CategoryTag category = {post.category} />

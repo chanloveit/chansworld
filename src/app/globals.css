@@ -71,7 +71,7 @@
   .tag-dev-blog { color: var(--color-cat-dev-blog); border-color: var(--color-cat-dev-blog); }
   .tag-album-review { color: var(--color-cat-album-review); border-color: var(--color-cat-album-review); }
 
-	.prose{ font-size: 14px; line-height: 2; color: var(--color-text-2); }
+	.prose{ font-size: 16px; line-height: 2; color: var(--color-text-2); }
 
 	.prose p { margin-bottom: 1.5em; }
   .prose h1 { font-size: 1.35em; color: var(--color-text-1); margin: 2em 0 .7em; font-weight: 600; }
