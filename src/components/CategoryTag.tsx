@@ -1,14 +1,13 @@
-export default function CategoryTag({ category }: { category: string }){
-	const colorMap: Record<string, string> = {
-		dev_etc: 'text-cat-dev-etc border-cat-dev-etc',
-		PS: 'text-cat-ps border-cat-ps',
-		dev_blog: 'text-cat-dev-blog border-cat-dev-blog',
-		album_review: 'text-cat-album-review border-cat-album-review'
-	};
+import { getCategoryColor } from '@/utils/categories';
 
+interface Props{
+	category: string,
+	categories: string[]
+}
+
+export default function CategoryTag({ category, categories }: Props){
+	const color = getCategoryColor(categories, category);
 	return(
-		<span className = {`tag ${colorMap[category] ?? 'text-text-3 border-text-3'}`}>
-			#{category}
-		</span>
+		<span className = 'text-[10px] tracking-widest px-2 py-0.5 border rounded-sm lowercase whitespace-nowrap' style = {{ color, borderColor: color }}>#{category}</span>
 	)
 }

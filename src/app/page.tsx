@@ -1,8 +1,8 @@
-import { getAllPosts, getFeaturedPosts } from '@/utils/posts';
+import { getAllPosts, getFeaturedPosts, getAllCategories } from '@/utils/posts';
 import type { Post } from '@/utils/types';
 import Link from 'next/link'
 import CategoryTag from '@/components/CategoryTag';
-import PostList from '@/components/PostList'
+import PostList from '@/components/PostList';
 
 export default async function Home() {
 	const posts = getAllPosts();
@@ -20,17 +20,19 @@ export default async function Home() {
 				</section>
 			)}
 
-			<PostList posts = {latest} />
+			<PostList posts = {latest} categories = {getAllCategories()}/>
 		</div>
 	);
 }
 
 function FeaturedRow({ post }: {post: Post}){
+	const CATEGORIES = getAllCategories();
+	
 	return(
 		<Link href = {`/post/${post.id}`}>
 			<div className = 'py-5 border-b border-border-1 transition-all duration-200 hover:pl-4 cursor-pointer'>
 				<div className = 'flex items-center gap-3 mb-2'>
-					<CategoryTag category = {post.category} />
+					<CategoryTag category = {post.category} categories = {CATEGORIES}/>
 					<span className = 'text-[12px] text-text-3'>{post.created_at}</span> 
 				</div>
 				<p className = 'text-[20px] text-text-1 tracking-wide'>{post.title}</p>

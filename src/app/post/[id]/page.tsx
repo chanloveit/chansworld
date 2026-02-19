@@ -1,4 +1,4 @@
-import { getAllPosts, getPostById } from '@/utils/posts';
+import { getAllPosts, getPostById, getAllCategories } from '@/utils/posts';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -22,16 +22,17 @@ export async function generateMetadata({ params }: { params : Promise<{ id: stri
 export default async function PostPage({ params }: { params : Promise<{ id: string }>}){
 	const { id } = await params;
 	const post = getPostById(Number(id));
-
+	const categories = getAllCategories();
+	
 	if(!post){
 		notFound();
 	}
 	
 	return(
-		<div className = 'max-w-5xl mx-auto px-10 pt-16 pb-24'>
+		<div className = 'max-w-4xl mx-auto px-10 pt-16 pb-24'>
 			<header className = 'mb-14'>
 				<div className = 'flex items-center gap-3 mb-5'>
-					<CategoryTag category = {post.category} />
+					<CategoryTag category = {post.category} categories = {categories} />
 					<span className = 'text-[12px] text-text-3'>{post.created_at}</span>
 				</div>
 

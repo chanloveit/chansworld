@@ -5,11 +5,14 @@ import { useState } from 'react';
 import type { Post } from '@/utils/types';
 import PostRow from '@/components/PostRow';
 
-const CATEGORIES = ['ALL', 'dev_etc', 'PS', 'dev_blog', 'album_review'];
+interface Props{
+	posts: Post[],
+	categories: string[]
+}
 
-export default function PostList({ posts }: { posts: Post[] }){
+export default function PostList({ posts, categories }: Props){
+	const CATEGORIES = ['ALL', ...categories];
 	const [filter, setFilter] = useState('ALL')
-
 	const filtered = filter === 'ALL' ? posts : posts.filter((p) => p.category === filter);
 
 	return(
@@ -44,7 +47,7 @@ export default function PostList({ posts }: { posts: Post[] }){
       </div>
 
       {filtered.map((post, index) => (
-        <PostRow key = {post.id} post = {post} index = {index} />
+        <PostRow key = {post.id} post = {post} index = {index} categories = {CATEGORIES} />
       ))}
 		</section>
 	)

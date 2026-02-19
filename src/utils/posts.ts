@@ -38,3 +38,8 @@ export function getPostById(id: number): Post | null{
 export function getFeaturedPosts(): Post[]{
 	return getAllPosts().filter((p) => p.featured);
 }
+
+export function getAllCategories(): string[]{
+  const posts = getAllPosts();
+  return [...new Set(posts.map((p) => p.category))];
+}

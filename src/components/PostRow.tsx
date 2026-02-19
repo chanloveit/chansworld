@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Post } from '@/utils/types';
 import CategoryTag from '@/components/CategoryTag';
 
-export default function PostRow({ post, index }: {post: Post; index: number }){
+export default function PostRow({ post, index, categories }: {post: Post; index: number; categories: string[] }){
 	return(
 		<Link href = {`/post/${post.id}`}>
 			<div style = {{ gridTemplateColumns: '36px 1fr auto' }} className = 'grid items-center py-4 px-2 border-b border-border-1 cursor-pointer rounded-sm transition-colors duration-200 hover:bg-bg-2 group'>
@@ -16,7 +16,7 @@ export default function PostRow({ post, index }: {post: Post; index: number }){
 
 				<div className = 'flex items-center gap-4 shrink-0'>
 					<span className = 'text-[12px] text-text-3 min-w-20 text-right'>{post.created_at}</span>
-					<CategoryTag category = {post.category} />
+					<CategoryTag category = {post.category} categories = {categories} />
 				</div> 
 			</div>
 		</Link>

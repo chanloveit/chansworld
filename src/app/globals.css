@@ -17,11 +17,6 @@
   --color-accent: #00ff88;
 
   --radius-custom: 2px;
-
-	--color-cat-dev-etc: #00ff88;
-  --color-cat-ps: #00cfff;
-  --color-cat-dev-blog: #ffcc00;
-  --color-cat-album-review: #ff4466;
 }
 
 @variant light (&:where(.light, .light *));
@@ -66,10 +61,6 @@
     border-radius: var(--radius-custom);
     white-space: nowrap;
 	}
-  .tag-dev-etc { color: var(--color-cat-dev-etc); border-color: var(--color-cat-dev-etc); }
-  .tag-ps { color: var(--color-cat-ps); border-color: var(--color-cat-ps); }
-  .tag-dev-blog { color: var(--color-cat-dev-blog); border-color: var(--color-cat-dev-blog); }
-  .tag-album-review { color: var(--color-cat-album-review); border-color: var(--color-cat-album-review); }
 
 	.prose{ font-size: 16px; line-height: 2; color: var(--color-text-2); }
 
