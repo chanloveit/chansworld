@@ -70,6 +70,25 @@
   .tag-ps { color: var(--color-cat-ps); border-color: var(--color-cat-ps); }
   .tag-dev-blog { color: var(--color-cat-dev-blog); border-color: var(--color-cat-dev-blog); }
   .tag-album-review { color: var(--color-cat-album-review); border-color: var(--color-cat-album-review); }
+
+	.prose{ font-size: 14px; line-height: 2; color: var(--color-text-2); }
+
+	.prose p { margin-bottom: 1.5em; }
+  .prose h1 { font-size: 1.35em; color: var(--color-text-1); margin: 2em 0 .7em; font-weight: 600; }
+  .prose h2 { font-size: 1.1em; color: var(--color-text-1); margin: 2em 0 .7em; font-weight: 500; border-left: 2px solid var(--color-accent); padding-left: 12px; }
+  .prose h3 { font-size: 1em; color: var(--color-accent); margin: 1.6em 0 .6em; }
+  .prose a { color: var(--color-accent); border-bottom: 1px solid transparent; transition: border-color .2s; }
+  .prose a:hover { border-bottom-color: var(--color-accent); }
+  .prose strong { color: var(--color-text-1); font-weight: 600; }
+  .prose hr { border: none; border-top: 1px solid var(--color-border-1); margin: 2.4em 0; }
+  .prose img { max-width: 100%; border: 1px solid var(--color-border-1); display: block; margin: 1.8em 0; }
+  .prose ul,
+  .prose ol { padding-left: 1.5em; margin-bottom: 1.5em; }
+  .prose li { margin-bottom: .35em; }
+  .prose blockquote { border-left: 2px solid var(--color-border-2); padding-left: 16px; color: var(--color-text-3); font-style: italic; margin: 1.6em 0; }
+  .prose code { background: var(--color-bg-2); border: 1px solid var(--color-border-1); padding: 1px 6px; border-radius: var(--radius-custom); font-size: .88em; color: var(--color-cat-ps); }
+  .prose pre { background: var(--color-bg-2) !important; border: 1px solid var(--color-border-1) !important; border-left: 2px solid var(--color-accent) !important; border-radius: 0 !important; padding: 20px 24px !important; overflow-x: auto; margin: 1.8em 0; font-size: 13px !important; }
+  .prose pre code { background: none; border: none; padding: 0; color: var(--color-text-1); }
 }
 
 @keyframes blink{ 0%,100%{opacity:1} 50%{opacity:0} }
