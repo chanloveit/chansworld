@@ -2,6 +2,7 @@ import { getAllPosts, getFeaturedPosts } from '@/utils/posts';
 import type { Post } from '@/utils/types';
 import Link from 'next/link'
 import CategoryTag from '@/components/CategoryTag';
+import PostRow from '@/components/PostRow'
 
 export default async function Home() {
 	const featured = getFeaturedPosts().slice(0, 5);
@@ -41,19 +42,6 @@ function FeaturedRow({ post }: {post: Post}){
 					<span className = 'text-[12px] text-text-3'>{post.created_at}</span> 
 				</div>
 				<p className = 'text-[20px] text-text-1 tracking-wide'>{post.title}</p>
-			</div>
-		</Link>
-	)
-}
-
-function PostRow({ post, index }: {post: Post; index: number }){
-	return(
-		<Link href = {`/post/${post.id}`}>
-			<div style = {{ gridTemplateColumns: '36px 1fr auto' }} className = 'grid items-center py-4 px-2 border-b border-border-1 cursor-pointer rounded-sm transition-colors duration-200 hover:bg-bg-3 group'>
-				<span className = 'text-[12px] text-text-3 text-right tabular-bums group-hover:hidden'>
-					{String(index + 1).padStart(2, '0')}
-				</span>
-				
 			</div>
 		</Link>
 	)
