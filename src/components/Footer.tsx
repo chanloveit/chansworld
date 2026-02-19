@@ -15,7 +15,7 @@ export default function Footer(){
 					className = 'transition-colors duration-200 hover:text-accent'>
 					<Github />
 				</Link>
-				<span onClick = {() => window.close()} className = 'transition-colors duration-200 hover:text-accent hover:cursor-pointer'>exit 0</span>
+				<span onClick = {() => window.close()} className = 'transition-colors duration-200 hover:text-red-500 hover:cursor-pointer'>exit 0</span>
 			</div>
 		</footer>
 	)
