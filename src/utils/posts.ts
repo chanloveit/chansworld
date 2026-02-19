@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import type { Post } from './types'
 
-const POSTS_DIR = path.join(process.cwd(), 'posts/post');
+const POSTS_DIR = path.join(process.cwd(), 'posts');
 
 export function getAllPosts(): Post[]{
 	if(!fs.existsSync(POSTS_DIR)){
