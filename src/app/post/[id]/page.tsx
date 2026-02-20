@@ -23,6 +23,7 @@ export default async function PostPage({ params }: { params : Promise<{ id: stri
 	const { id } = await params;
 	const post = getPostById(Number(id));
 	const categories = getAllCategories();
+	const CATEGORIES = ['ALL', ...categories];
 	
 	if(!post){
 		notFound();
@@ -32,7 +33,7 @@ export default async function PostPage({ params }: { params : Promise<{ id: stri
 		<div className = 'max-w-4xl mx-auto px-10 pt-16 pb-24'>
 			<header className = 'mb-14'>
 				<div className = 'flex items-center gap-3 mb-5'>
-					<CategoryTag category = {post.category} categories = {categories} />
+					<CategoryTag category = {post.category} categories = {CATEGORIES} />
 					<span className = 'text-[12px] text-text-3'>{post.created_at}</span>
 				</div>
 
