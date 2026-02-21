@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import CategoryTag from '@/components/CategoryTag';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
+import Comments from '@/components/Comments';
 
 export async function generateMetadata({ params }: { params : Promise<{ id: string }>}): Promise<Metadata>{
 	const { id } = await params;
@@ -44,8 +45,8 @@ export default async function PostPage({ params }: { params : Promise<{ id: stri
 			<article className = 'prose'>
 				<MarkdownRenderer content = {post.content} />
 			</article>
+
+			<Comments />
 		</div>
-		
-		
 	)
 }
