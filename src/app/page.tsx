@@ -26,7 +26,7 @@ export default async function Home() {
 }
 
 function FeaturedRow({ post }: {post: Post}){
-	const CATEGORIES = ['ALL', ...getAllCategories()];
+	const CATEGORIES = ['ALL', ...getAllCategories().reverse()];
 	
 	return(
 		<Link href = {`/post/${post.id}`}>

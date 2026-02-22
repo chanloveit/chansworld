@@ -11,7 +11,7 @@ interface Props{
 }
 
 export default function PostList({ posts, categories }: Props){
-	const CATEGORIES = ['ALL', ...categories];
+	const CATEGORIES = ['ALL', ...[...categories].reverse()];
 	const [filter, setFilter] = useState('ALL')
 	const filtered = filter === 'ALL' ? posts : posts.filter((p) => p.category === filter);
 

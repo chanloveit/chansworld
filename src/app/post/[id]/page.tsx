@@ -24,7 +24,7 @@ export default async function PostPage({ params }: { params : Promise<{ id: stri
 	const { id } = await params;
 	const post = getPostById(Number(id));
 	const categories = getAllCategories();
-	const CATEGORIES = ['ALL', ...categories];
+	const CATEGORIES = ['ALL', ...categories.reverse()];
 	
 	if(!post){
 		notFound();
