@@ -31,7 +31,6 @@ export default function Toc(){
                     return(
                         <li 
                             key = {el.innerHTML}
-                            style = {{ marginLeft: el.tagName === 'H2' ? '10x' : '0px' }}
                             className = {`block text-[11px] tracking-wide transition-colors duration-200 leading-relaxed
                                             ${active ? 'text-accent' : 'text-text-3 hover:text-text-2'}`}
                         >
