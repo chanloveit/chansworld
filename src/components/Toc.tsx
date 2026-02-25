@@ -49,7 +49,7 @@ const observerOption = {
     rootMargin: '-76px 0px 0px 0px'
 };
 
-function getIntersectionObserver(setState: Dispath<SetStateAction<string>>){
+function getIntersectionObserver(setState: Dispatch<SetStateAction<string>>){
     let direction = '';
     let prevYposition = 0;
     
