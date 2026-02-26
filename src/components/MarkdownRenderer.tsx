@@ -6,13 +6,13 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import LiteYoutubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
-import rehypeRaw from 'rehype-raw';
+import rehypeSlug from 'rehype-slug';
 
 export default function MarkdownRenderer({ content }: { content: string}){
 	return(
 		<ReactMarkdown
 			remarkPlugins = {[remarkGfm]}
-			rehypePlugins = {[rehypeRaw]}
+			rehypePlugins = {[rehypeSlug]}
 			components = {{
 				p({ children, ...props}: any){
 					const text = String(children);

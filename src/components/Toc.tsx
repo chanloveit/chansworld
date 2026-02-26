@@ -27,14 +27,17 @@ export default function Toc(){
             <p className = 'text-[10px] text-text-3 tracking-[3px] mb-3'>// toc</p>
             <ul className = 'border-l border-accent pl-4 space-y-2'>
                 {headingEls.map((el) => {
-                    const active = currentId === el.innerHTML;
+                    const active = currentId === el.id;
                     return(
                         <li 
-                            key = {el.innerHTML}
+                            key = {el.id}
+                            style = {{ marginLeft: el.tagName === 'H2' ? '1rem' : 0 }}
                             className = {`block text-[11px] tracking-wide transition-colors duration-200 leading-relaxed
                                             ${active ? 'text-accent' : 'text-text-3 hover:text-text-2'}`}
                         >
-                            {el.textContent}
+                            <a href = {`#${el.id}`} className = 'block w-full h-full'>
+                                {el.textContent}
+                            </a>
                         </li>
                     )
                 })}
@@ -73,7 +76,7 @@ function getIntersectionObserver(setState: Dispatch<SetStateAction<string>>){
             checkScrollDirection(prevYposition);
 
             if((direction === 'down' && !entry.isIntersecting) || (direction === 'up' && entry.isIntersecting)){
-                setState(entry.target.innerHTML);
+                setState(entry.target.id);
             }
         });
     }, observerOption);
