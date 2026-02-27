@@ -1,7 +1,6 @@
-import { getAllPosts, getPostById, getAllCategories } from '@/utils/posts';
+import { getPostById, getAllCategories } from '@/utils/posts';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import CategoryTag from '@/components/CategoryTag';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
 import Comments from '@/components/Comments';
