@@ -20,6 +20,9 @@ export const metadata = {
 	},
 	verification: {
 		google: "oqZPgdu6nMgI0e9z8qvbM2gdq9ZM9owap03ZwIfysTk"
+	},
+	other: {
+		'naver-site-verification': "a5f61d31b22051d52f38ca862cd50b11cff024a4"
 	}
 };
 
