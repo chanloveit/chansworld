@@ -14,18 +14,6 @@ export default function MarkdownRenderer({ content }: { content: string}){
 			remarkPlugins = {[remarkGfm]}
 			rehypePlugins = {[rehypeSlug]}
 			components = {{
-				p({ children, ...props}: any){
-					const text = String(children);
-					const match = /^youtube:([a-zA-Z0-9_-]+)$/.exec(text.trim());
-					if(match){
-						return <LiteYoutubeEmbed id = {match[1]} title = 'youtube' />;
-					}
-
-					else{
-						return <p {...props}>{children}</p>;
-					}
-				},
-				
 				code({ node, className, children, ...props }: any){
 					const match = /language-(\w+)/.exec(className || '');
 					const inline = !match;

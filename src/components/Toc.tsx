@@ -9,13 +9,11 @@ export default function Toc(){
     useEffect(() => {
         const observer = getIntersectionObserver(setCurrentId);
         const headingElements = Array.from(document.querySelectorAll('article h1, article h2'));
-
         setHeadingEls(headingElements);
-
-        headingElements.map((header) => {
-            observer.observe(header);
-            return () => observer.disconnect();
-        });
+        headingElements.forEach((el) => observer.observe(el));
+        return () => {
+            headingElements.forEach((el) => observer.unobserve(el));
+        };
     }, []);
 
     if (headingEls.length === 0){

@@ -3,8 +3,15 @@ import { Metadata } from 'next';
 import { Providers } from '@/utils/providers';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { JetBrains_Mono } from 'next/font/google';
 
-export const metadata = {
+const jetbrains = JetBrains_Mono({
+	subsets: ['latin'],
+	variable: '--font-jetbrains',
+	display: 'swap',
+});
+
+export const metadata: Metadata = {
 	title: {
 		default: 'chansworld: 이찬희 블로그',
 		template: '%s | chansworld',
@@ -28,7 +35,7 @@ export const metadata = {
 
 export default function RootLayout({ children, }: { children: React.ReactNode; }) {
   return (
-    <html lang = "ko" suppressHydrationWarning> 
+    <html lang = "ko" className = {jetbrains.variable} suppressHydrationWarning> 
 	    <body className = 'flex flex-col min-h-screen'>
 				<Providers>
 					<Navbar />
