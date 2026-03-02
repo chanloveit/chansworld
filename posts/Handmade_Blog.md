@@ -29,25 +29,25 @@ featured: true
 
 # TechStack
 ## Next.js
-![Next.js](/images/Nextjs.jpg)
+![Next.js](/images/Handmade_Blog/Nextjs.jpg)
 파일 구조 기반의 라우팅? 정말 매력적이다.  
 디렉토리를 만들면 그게 URL이라니, Django에서 path넣고 하는 거랑은 차원이 다른 생산성이다.  
 SSR이니 SSG니 하는 건 정적 페이지라 큰 아직 의미는 없다고 생각한다.  
 서버/클라이언트 컴포넌트 분리하는 거라던가, 상태 관리 같은 것들을 이제서 조금 알 것 같다.  
 
 ## TailwindCSS
-![TailwindCSS](/images/Tailwindcss.jpg)
+![TailwindCSS](/images/Handmade_Blog/Tailwindcss.jpg)
 CSS작성하는 게 그다지 즐거운 일은 아니지만, TailwindCSS가 있으면 좀 낫다.  
 
 ## TypeScript
-![TypeScript](/images/Typescript.jpg)
+![TypeScript](/images/Handmade_Blog/Typescript.jpg)
 매해 올해의 기술 스택에 TypeScript가 언급되는 것 같아서 써보고 있는데, 엄격한 타이핑이라는 게 개인 프로젝트라던가, 숙련되지 않은 경우에는 생산성이 더 낮다는 생각이 든다.  
 분명히 그것은 안정감을 주지만 타입을 맞추기 위해 타입을 정의하는 것 같은 느낌이 들 때가 한두번이 아니다.  
 협업까지 가 봐야 알 것 같다.  
 
 
 ## Vercel
-![Vercel](/images/Vercel.jpg)
+![Vercel](/images/Handmade_Blog/Vercel.jpg)
 처음 블로그 만들 때 Django를 REST API로 쓰려고 포스트랑 카테고리 모델을 만들어 뒀는데, 배포하기에 여간 귀찮은 게 아니어서 갖다 버렸다. 포스트는 그냥 .md로 관리한다.  
 그럼 Next.js 프로젝트만 남으니까 GitHub Repository만 연결해 두면 push할 때마다 알아서 업데이트도 되고 편하다.  
 처음 웹 프로그래밍 연습할 때 NASA API를 가지고 화성 날씨 대시보드 만드는 걸 해봤는데, 그때 Render라는 배포 서비스를 써 봤다. 가볍고 작은 웹 서비스면 이것도 고려할 만한 것 같다. 도메인이 지저분해서 뭐 검색 노출되는 그런 거 말고 GitHub 프로필 꾸미기 레포지토리 같은 것들.  
