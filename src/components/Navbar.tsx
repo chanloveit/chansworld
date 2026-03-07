@@ -2,25 +2,11 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
 import ThemeToggle from '@/components/ThemeToggle'
+import { Clock } from 'simple-digital-clock';
 
 export default function Navbar(){
 	const pathname = usePathname();
-  const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const [time, setTime] = useState('');
-
-	useEffect(() => {
-		setMounted(true);
-		const tick = () => setTime(new Date().toTimeString().slice(0, 8));
-		tick();
-		const id = setInterval(tick, 1000);
-		return () => clearInterval(id);
-	});
-
-	const isDark = resolvedTheme === "dark";
 	
 	return(
 		<header className = 'sticky top-0 z-50 border-b border-border-1 bg-bg-1'>
@@ -30,9 +16,7 @@ export default function Navbar(){
 					$
 				</span>
 
-				<span className = 'tabular-nums'>
-          {mounted ? time : "──:──:──"}
-        </span>
+				<Clock />
 			</div>
 
 			<div className = 'flex items-center justify-between px-10 h-14'>
